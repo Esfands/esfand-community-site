@@ -30,7 +30,7 @@ export default function Home() {
                     <div>
                       <iframe
                         className=" h-full aspect-video"
-                        src="https://embed.twitch.tv/?channel=esfandtv&allowfullscreen=true&parent=esfans.net&layout=video&height=100%25&width=100%25"
+                        src="https://embed.twitch.tv/?channel=esfandtv&allowfullscreen=true&parent=www.esfans.net&layout=video&height=100%25&width=100%25"
                         allowFullScreen={true}
                         height={'100%'}
                         width={'100%'}
