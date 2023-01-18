@@ -76,41 +76,6 @@ export default function Home() {
             </div>
           </div>
         </main>
-
-
-
-
-
-
-
-
-
-
-      <main className={styles.main}>
-      <h1>yes it looks bad - will add more over time</h1>
-        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
-            <div className="px-4 py-5 sm:px-6">
-              Minecraft Server
-            </div>
-            <div className="px-4 py-5 sm:p-6">
-              <h2>mc.esfans.net:25566</h2>
-              <h2>Java Edition - Vanilla No Mods</h2>
-            </div>
-          </div>
-          <br />
-          <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
-            <div className="px-4 py-5 sm:px-6">
-              Terraria Server
-            </div>
-            <div className="px-4 py-5 sm:p-6">
-              <h2>tr.esfans.net</h2>
-              <h2>Password: esfand</h2>
-            </div>
-          </div>
-        </div>
-        <br/>
-      </main>
     </>
   )
 }
