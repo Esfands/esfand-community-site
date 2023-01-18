@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
-import { Transition, Popover } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure, Menu, Transition, Popover } from '@headlessui/react'
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'Home', href: '#', current: true },
@@ -15,128 +15,78 @@ function classNames(...classes: string[]) {
 
 export const Navbar = () => {
     return (
-      <Popover as="header" className="bg-gray-800 pb-24">
-      {({ open }) => (
-        <>
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-            <div className="relative flex items-center justify-center py-5 lg:justify-between">
-              {/* Logo */}
-              <div className="absolute left-0 flex-shrink-0 lg:static">
-                <a href="#">
-                  <span className='text-white'>ESF</span>
-                </a>
-              </div>
+      <div className="bg-gray-800 pb-32">
+          <Disclosure as="nav" className="border-b border-opacity-25 bg-gray-800 lg:border-none">
+            {({ open }) => (
+              <>
+                <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
+                  <div className="relative flex h-16 items-center justify-between lg:border-b lg:bg-gray-800 lg:border-opacity-25">
+                    <div className="flex items-center px-2 lg:px-0">
+                      <div className="flex-shrink-0">
+                        <p className="text-white font-extrabold">ESF</p>
+                      </div>
+                      <div className="hidden lg:ml-10 lg:block">
+                        <div className="flex space-x-4">
+                          {navigation.map((item) => (
+                            <a
+                              key={item.name}
+                              href={item.href}
+                              className={classNames(
+                                item.current
+                                  ? 'bg-gray-700 text-white'
+                                  : 'text-white hover:bg-gray-500 hover:bg-opacity-75',
+                                'rounded-md py-2 px-3 text-sm font-medium'
+                              )}
+                              aria-current={item.current ? 'page' : undefined}
+                            >
+                              {item.name}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex lg:hidden">
+                      {/* Mobile menu button */}
+                      <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-gray-600 p-2 text-gray-200 hover:bg-gray-500 hover:bg-opacity-75 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-600">
+                        <span className="sr-only">Open main menu</span>
+                        {open ? (
+                          <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                        ) : (
+                          <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                        )}
+                      </Disclosure.Button>
+                    </div>
+                  </div>
+                </div>
 
-              {/* Menu button */}
-              <div className="absolute right-0 flex-shrink-0 lg:hidden">
-                {/* Mobile menu button */}
-                <Popover.Button className="inline-flex items-center justify-center rounded-md bg-transparent p-2 text-indigo-200 hover:bg-white hover:bg-opacity-10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Popover.Button>
-              </div>
-            </div>
-            <div className="hidden border-t border-white border-opacity-20 py-5 lg:block">
-              <div className="grid grid-cols-3 items-center gap-8">
-                <div className="col-span-2">
-                  <nav className="flex space-x-4">
+                <Disclosure.Panel className="lg:hidden">
+                  <div className="space-y-1 px-2 pt-2 pb-3">
                     {navigation.map((item) => (
-                      <a
+                      <Disclosure.Button
                         key={item.name}
+                        as="a"
                         href={item.href}
                         className={classNames(
-                          item.current ? 'text-white' : 'text-indigo-100',
-                          'text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10'
+                          item.current
+                            ? 'bg-gray-700 text-white'
+                            : 'text-white hover:bg-gray-500 hover:bg-opacity-75',
+                          'block rounded-md py-2 px-3 text-base font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Disclosure.Button>
                     ))}
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <Transition.Root as={Fragment}>
-            <div className="lg:hidden">
-              <Transition.Child
-                as={Fragment}
-                enter="duration-150 ease-out"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                leave="duration-150 ease-in"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-              >
-                <Popover.Overlay className="fixed inset-0 z-20 bg-black bg-opacity-25" />
-              </Transition.Child>
-
-              <Transition.Child
-                as={Fragment}
-                enter="duration-150 ease-out"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="duration-150 ease-in"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Popover.Panel
-                  focus
-                  className="absolute inset-x-0 top-0 z-30 mx-auto w-full max-w-3xl origin-top transform p-2 transition"
-                >
-                  <div className="divide-y divide-gray-200 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-                    <div className="pt-3 pb-2">
-                      <div className="flex items-center justify-between px-4">
-                        <div>
-                          ESF
-                        </div>
-                        <div className="-mr-2">
-                          <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                            <span className="sr-only">Close menu</span>
-                            <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                          </Popover.Button>
-                        </div>
-                      </div>
-                      <div className="mt-3 space-y-1 px-2">
-                        <a
-                          href="#"
-                          className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-gray-800"
-                        >
-                          Home
-                        </a>
-                        <a
-                          href="#"
-                          className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-gray-800"
-                        >
-                          Community
-                        </a>
-                        <a
-                          href="#"
-                          className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-gray-800"
-                        >
-                          Events
-                        </a>
-                        <a
-                          href="#"
-                          className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-gray-800"
-                        >
-                          Schedule
-                        </a>
-                      </div>
-                    </div>
                   </div>
-                </Popover.Panel>
-              </Transition.Child>
+                </Disclosure.Panel>
+              </>
+            )}
+          </Disclosure>
+          <header className="py-10">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <h1 className="text-3xl font-bold tracking-tight text-white">Dashboard</h1>
             </div>
-          </Transition.Root>
-        </>
-      )}
-    </Popover>
+          </header>
+        </div>
     );
 }
