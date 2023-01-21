@@ -1,19 +1,16 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition, Popover } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-
-const navigation = [
-  { name: 'Home', href: '#', current: true },
-  { name: 'Community', href: '#', current: false },
-  { name: 'Shows', href: '#', current: false },
-  { name: 'Schedule', href: '#', current: false },
-]
+import { Disclosure } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
 export const Navbar = () => {
+
+    const router = useRouter();
+    
     return (
       <div className="bg-gray-800 pb-32">
           <Disclosure as="nav" className="border-b border-opacity-25 bg-gray-800 lg:border-none">
@@ -27,21 +24,10 @@ export const Navbar = () => {
                       </div>
                       <div className="hidden lg:ml-10 lg:block">
                         <div className="flex space-x-4">
-                          {navigation.map((item) => (
-                            <a
-                              key={item.name}
-                              href={item.href}
-                              className={classNames(
-                                item.current
-                                  ? 'bg-gray-700 text-white'
-                                  : 'text-white hover:bg-gray-500 hover:bg-opacity-75',
-                                'rounded-md py-2 px-3 text-sm font-medium'
-                              )}
-                              aria-current={item.current ? 'page' : undefined}
-                            >
-                              {item.name}
-                            </a>
-                          ))}
+                          <Link href="/" className={ classNames(router.pathname == "/" ? 'bg-gray-700 text-white' : 'text-white hover:bg-gray-500 hover:bg-opacity-75', 'rounded-md py-2 px-3 text-sm font-medium')}>Home</Link>
+                          <Link href="/community/gameservers" className={ classNames(router.pathname == "/community/gameservers" ? 'bg-gray-700 text-white' : 'text-white hover:bg-gray-500 hover:bg-opacity-75', 'rounded-md py-2 px-3 text-sm font-medium')}>Community</Link>
+                          <Link href="/shows" className={ classNames(router.pathname == "/shows" ? 'bg-gray-700 text-white' : 'text-white hover:bg-gray-500 hover:bg-opacity-75', 'rounded-md py-2 px-3 text-sm font-medium')}>Shows</Link>
+                          <Link href="/schedule" className={ classNames(router.pathname == "/schedule" ? 'bg-gray-700 text-white' : 'text-white hover:bg-gray-500 hover:bg-opacity-75', 'rounded-md py-2 px-3 text-sm font-medium')}>Schedule</Link>
                         </div>
                       </div>
                     </div>
@@ -61,22 +47,18 @@ export const Navbar = () => {
 
                 <Disclosure.Panel className="lg:hidden">
                   <div className="space-y-1 px-2 pt-2 pb-3">
-                    {navigation.map((item) => (
-                      <Disclosure.Button
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? 'bg-gray-700 text-white'
-                            : 'text-white hover:bg-gray-500 hover:bg-opacity-75',
-                          'block rounded-md py-2 px-3 text-base font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </Disclosure.Button>
-                    ))}
+                    <Disclosure.Button as="a">
+                      <Link href="/" className={ classNames(router.pathname == "/" ? 'bg-gray-700 text-white' : 'text-white hover:bg-gray-500 hover:bg-opacity-75', 'block rounded-md py-2 px-3 text-base font-medium')}>Home</Link>
+                    </Disclosure.Button>
+                    <Disclosure.Button as="a">
+                      <Link href="/community/gameservers" className={ classNames(router.pathname == "/community/gameservers" ? 'bg-gray-700 text-white' : 'text-white hover:bg-gray-500 hover:bg-opacity-75', 'block rounded-md py-2 px-3 text-base font-medium')}>Community</Link>
+                    </Disclosure.Button>
+                    <Disclosure.Button as="a">
+                      <Link href="/shows" className={ classNames(router.pathname == "/shows" ? 'bg-gray-700 text-white' : 'text-white hover:bg-gray-500 hover:bg-opacity-75', 'block rounded-md py-2 px-3 text-base font-medium')}>Shows</Link>
+                    </Disclosure.Button>
+                    <Disclosure.Button as="a">
+                      <Link href="/schedule" className={ classNames(router.pathname == "/schedule" ? 'bg-gray-700 text-white' : 'text-white hover:bg-gray-500 hover:bg-opacity-75', 'block rounded-md py-2 px-3 text-base font-medium')}>Schedule</Link>
+                    </Disclosure.Button>
                   </div>
                 </Disclosure.Panel>
               </>
