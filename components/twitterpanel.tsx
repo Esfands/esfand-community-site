@@ -108,7 +108,7 @@ export const TwitterPanel = () => {
                                                         __html: DOMPurify.sanitize(urlify(tweet.text)),
                                                     }}>
                                                     </div>
-                                                    <div className="relative h-4 w-4 float-right text-[#970e0f]">
+                                                    <div className="relative h-4 w-4 float-right text-white">
                                                         <a href={tweet.url}><ArrowTopRightOnSquareIcon /></a>
                                                     </div>
                                                 </div>
