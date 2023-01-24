@@ -11,7 +11,7 @@ export const InfoBanner = () => {
             </span>
             <p className="ml-3 truncate font-medium text-white">
               <span className="md:hidden">Website currently under construction.</span>
-              <span className="hidden md:inline">Website currently under construction. No realtime values</span>
+              <span className="hidden md:inline">Website currently under construction. Please forgive the mess.</span>
             </p>
           </div>
         </div>
