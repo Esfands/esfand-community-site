@@ -1,6 +1,6 @@
 export const YoutubePanel = () => {
     return (
-        <div className="rounded-lg bg-white shadow h-96">
+        <div className="rounded-lg bg-[#1b2126] shadow h-100">
             <iframe
                 className='aspect-video'
                 width={'100%'} 

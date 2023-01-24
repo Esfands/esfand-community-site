@@ -2,10 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  background-color: #121212;
-}
-
-h1 {
-  color: red;
-}
