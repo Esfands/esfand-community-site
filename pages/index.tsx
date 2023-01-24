@@ -26,7 +26,7 @@ export default function Home() {
 
               {/* Schedule Column */}
               <div className="grid grid-cols-1 gap-4 lg:col-span-4">
-                <div className="overflow-hidden rounded-lg bg-white shadow h-full">
+                <div className="overflow-hidden rounded-lg bg-[#1b2126] shadow h-full border border-[]">
                   <div className="p-6">
                   <ul role="list" className="divide-y divide-gray-200">
                       <li className="flex py-4">
