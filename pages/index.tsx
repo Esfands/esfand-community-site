@@ -72,9 +72,14 @@ export default function Home() {
 export async function getStaticProps() {
 
   // get tweets
-  const tweetResponse = await fetch('https://cdn.otkdata.com/api/posts/esfandtv', { method: 'GET', mode: 'cors',});
+  const tweetResponse = await fetch('https://cdn.otkdata.com/api/posts/esfandtv', { method: 'GET', mode: 'cors'});
   const tweets = await tweetResponse.json();
   // get latest youtube video
-  const youtubeResponse = await fetch('https://')
+  const youtubeResponse = await fetch('https://cdn.otkdata.com/api/videos/esfandtv?count=1', { method: 'GET', mode: 'cors'});
+  const video = await youtubeResponse.json();
   // get schedule
+  const scheduleResponse = await fetch('https://twitch.otkdata.com/api/streamers/esfandtv/schedule', { method: 'GET', mode: 'cors'});
+  const schedule = await scheduleResponse.json();
+
+  
 }
