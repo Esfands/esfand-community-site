@@ -4,7 +4,7 @@ import { TwitchPanel } from '../components/twitchpanel'
 import { TwitterPanel } from '../components/twitterpanel'
 import { YoutubePanel } from '../components/youtubepanel'
 
-export default function Home() {
+export default function Home(props) {
   return (
     <>
       <Head>
@@ -53,10 +53,10 @@ export default function Home() {
               </div>
               {/* 2nd row youtube & twitter */}
                 <div className="grid grid-cols-1 gap-0 lg:row-start-2 lg:col-span-5">
-                  <TwitterPanel/>
+                  <TwitterPanel tweets={props.tweets} />
                 </div>
                 <div className="grid grid-cols-1 gap-0 lg:row-start-2 lg:col-span-7">
-                  <YoutubePanel/>
+                  <YoutubePanel video={props.video} />
                 </div>
               {/* 3rd row social cloud */}
               <div className="grid grid-cols-1 lg:row-start-3 lg:col-span-12 gap-0 p-0">
@@ -81,5 +81,12 @@ export async function getStaticProps() {
   const scheduleResponse = await fetch('https://twitch.otkdata.com/api/streamers/esfandtv/schedule', { method: 'GET', mode: 'cors'});
   const schedule = await scheduleResponse.json();
 
-  
+  return {
+    props: {
+      tweets,
+      video,
+      schedule,
+    },
+  }
+
 }
