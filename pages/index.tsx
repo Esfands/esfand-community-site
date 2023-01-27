@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { ScheduleBox } from '../components/schedulebox'
 import { SocialCloud } from '../components/socialcloud'
 import { TwitchPanel } from '../components/twitchpanel'
 import { TwitterPanel } from '../components/twitterpanel'
@@ -25,32 +26,7 @@ export default function Home(props) {
               </div>
 
               {/* Schedule Column */}
-              <div className="grid grid-cols-1 gap-4 lg:col-span-4">
-                <div className="overflow-hidden rounded-lg bg-[#1b2126] shadow h-full border border-[]">
-                  <div className="p-6">
-                  <ul role="list" className="divide-y divide-gray-200">
-                      <li className="flex py-4">
-                        <div className="ml-3">
-                          <p className="text-sm font-medium text-gray-900">Stream Name 1</p>
-                          <p className="text-sm text-gray-500">Game Name</p>
-                        </div>
-                      </li>
-                      <li className="flex py-4">
-                        <div className="ml-3">
-                          <p className="text-sm font-medium text-gray-900">Stream Name 2</p>
-                          <p className="text-sm text-gray-500">Game Name</p>
-                        </div>
-                      </li>
-                      <li className="flex py-4">
-                        <div className="ml-3">
-                          <p className="text-sm font-medium text-gray-900">Stream Name 3</p>
-                          <p className="text-sm text-gray-500">Game Name</p>
-                        </div>
-                      </li>
-                  </ul>
-                  </div>
-                </div>
-              </div>
+              <ScheduleBox schedule={props.schedule} />
               {/* 2nd row youtube & twitter */}
                 <div className="grid grid-cols-1 gap-0 lg:row-start-2 lg:col-span-5">
                   <TwitterPanel tweets={props.tweets} />
