@@ -5,10 +5,10 @@ import { InfoBanner } from "./infobanner"
 export const Layout = ({ children }) => {
     return (
         <>
-            <div className="min-h-full">
+            <div className="h-screen">
                 <InfoBanner />
                 <Navbar />
-                <main>{children}</main>
+                <main className="min-h-full">{children}</main>
                 <Footer />
             </div>
             
