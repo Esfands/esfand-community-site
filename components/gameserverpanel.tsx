@@ -66,7 +66,7 @@ export const GameServerPanel = ({ server }: Props) => {
         <div className="flex items-center px-4 py-4 sm:px-6">
           <div className="flex min-w-0 flex-1 items-center">
             <div className="flex-shrink-0">
-              <img className="w-20 m:w-36 lg:w-36" src={server.art} alt="" />
+              <img className="h-48 w-36" src={server.art} alt="" />
             </div>
             <div className="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
               <div>
