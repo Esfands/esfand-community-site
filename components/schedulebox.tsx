@@ -32,7 +32,7 @@ export const ScheduleBox = ({ schedule } : Schedule) => {
         const fetchScheduleSegments = async () => {
             try {
                 if (!isLoaded) {
-                    setSegments(schedule.data.segments.slice(0, 4));
+                    setSegments(schedule.data.segments.slice(0, 3));
                 }
                 setIsLoaded(true);
             } catch {
