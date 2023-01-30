@@ -27,7 +27,6 @@ export const Navbar = () => {
                           <Link href="/" className={ classNames(router.pathname == "/" ? 'bg-gray-700 text-white' : 'text-white hover:bg-gray-500 hover:bg-opacity-75', 'rounded-md py-2 px-3 text-sm font-medium')}>Home</Link>
                           <Link href="/community/gameservers" className={ classNames(router.pathname == "/community/gameservers" ? 'bg-gray-700 text-white' : 'text-white hover:bg-gray-500 hover:bg-opacity-75', 'rounded-md py-2 px-3 text-sm font-medium')}>Community</Link>
                           <Link href="/shows" className={ classNames(router.pathname == "/shows" ? 'bg-gray-700 text-white' : 'text-white hover:bg-gray-500 hover:bg-opacity-75', 'rounded-md py-2 px-3 text-sm font-medium')}>Shows</Link>
-                          <Link href="/schedule" className={ classNames(router.pathname == "/schedule" ? 'bg-gray-700 text-white' : 'text-white hover:bg-gray-500 hover:bg-opacity-75', 'rounded-md py-2 px-3 text-sm font-medium')}>Schedule</Link>
                         </div>
                       </div>
                     </div>
@@ -55,9 +54,6 @@ export const Navbar = () => {
                     </Disclosure.Button>
                     <Disclosure.Button as="a">
                       <Link href="/shows" className={ classNames(router.pathname == "/shows" ? 'bg-gray-700 text-white' : 'text-white hover:bg-gray-500 hover:bg-opacity-75', 'block rounded-md py-2 px-3 text-base font-medium')}>Shows</Link>
-                    </Disclosure.Button>
-                    <Disclosure.Button as="a">
-                      <Link href="/schedule" className={ classNames(router.pathname == "/schedule" ? 'bg-gray-700 text-white' : 'text-white hover:bg-gray-500 hover:bg-opacity-75', 'block rounded-md py-2 px-3 text-base font-medium')}>Schedule</Link>
                     </Disclosure.Button>
                   </div>
                 </Disclosure.Panel>
