@@ -68,18 +68,6 @@ export const Navbar = () => {
                         ]}
                         pathname={router.pathname}
                       />
-
-                      <Link
-                        href="/schedule"
-                        className={classNames(
-                          router.pathname == "/schedule"
-                            ? "bg-gray-700 text-white"
-                            : "text-white hover:bg-gray-500 hover:bg-opacity-75",
-                          "rounded-md py-2 px-3 text-sm font-medium"
-                        )}
-                      >
-                        Schedule
-                      </Link>
                     </div>
                   </div>
                 </div>
@@ -142,20 +130,6 @@ export const Navbar = () => {
                   setTabActive={setShowsTabActive}
                   tabIsActive={showsTabActive}
                 />
-
-                <Disclosure.Button as="a">
-                  <Link
-                    href="/schedule"
-                    className={classNames(
-                      router.pathname == "/schedule"
-                        ? "bg-gray-700 text-white"
-                        : "text-white hover:bg-gray-500 hover:bg-opacity-75",
-                      "block rounded-md py-2 px-3 text-base font-medium"
-                    )}
-                  >
-                    Schedule
-                  </Link>
-                </Disclosure.Button>
               </div>
             </Disclosure.Panel>
           </>
