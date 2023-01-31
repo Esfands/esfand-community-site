@@ -1,17 +1,16 @@
-import { Footer } from "./footer"
-import { Navbar } from "./navbar"
-import { InfoBanner } from "./infobanner"
+import { Footer } from "./footer";
+import { Navbar } from "./navbar";
+import { InfoBanner } from "./infobanner";
 
 export const Layout = ({ children }) => {
-    return (
-        <>
-            <div className="min-h-full">
-                <InfoBanner />
-                <Navbar />
-                <main>{children}</main>
-                <Footer />
-            </div>
-            
-        </>
-    )
-}
+  return (
+    <>
+      <div className="min-h-full">
+        <InfoBanner />
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </div>
+    </>
+  );
+};
