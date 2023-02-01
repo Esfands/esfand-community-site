@@ -108,6 +108,10 @@ export const Navbar = () => {
                       title: "Game Servers",
                       path: "/community/gameservers",
                     },
+                    {
+                      title: "Discord Unban",
+                      path: "/community/discordunban",
+                    },
                   ]}
                   pathname={router.pathname}
                   setTabActive={setCommunityTabActive}
@@ -130,6 +134,19 @@ export const Navbar = () => {
                   setTabActive={setShowsTabActive}
                   tabIsActive={showsTabActive}
                 />
+                <Disclosure.Button as="a">
+                  <Link
+                    href="/extension"
+                    className={classNames(
+                      router.pathname == "/extension"
+                        ? "bg-gray-700 text-white"
+                        : "text-white hover:bg-gray-500 hover:bg-opacity-75",
+                      "block rounded-md py-2 px-3 text-base font-medium"
+                    )}
+                  >
+                    Extension
+                  </Link>
+                </Disclosure.Button>
               </div>
             </Disclosure.Panel>
           </>
