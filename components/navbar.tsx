@@ -50,6 +50,10 @@ export const Navbar = () => {
                             entry: "Game Servers",
                             path: "/community/gameservers",
                           },
+                          {
+                            entry: "Discord Unbans",
+                            path: "/community/discordunban",
+                          },
                         ]}
                         pathname={router.pathname}
                       />
@@ -68,6 +72,17 @@ export const Navbar = () => {
                         ]}
                         pathname={router.pathname}
                       />
+                      <Link
+                        href="/extension"
+                        className={classNames(
+                          router.pathname == "/extension"
+                            ? "bg-gray-700 text-white"
+                            : "text-white hover:bg-gray-500 hover:bg-opacity-75",
+                          "rounded-md py-2 px-3 text-sm font-medium"
+                        )}
+                      >
+                        Extension
+                      </Link>
                     </div>
                   </div>
                 </div>
