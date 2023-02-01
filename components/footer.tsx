@@ -81,11 +81,12 @@ export const Footer = () => {
               Built By Guac
             </p>
           </a>
-          <a href="https://twitter.com/Mahcksimus">
             <p className="text-center text-sm leading-5 font-medium text-white">
-              & Mahcks
+              &amp;&nbsp;
+              <a href="https://twitter.com/Mahcksimus">
+                Mahcks
+              </a>
             </p>
-          </a>
         </div>
       </div>
     </footer>
