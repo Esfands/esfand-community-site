@@ -102,9 +102,9 @@ export default function Extension() {
                                                         <span className="text-base font-semibold leading-7">{faq.question}</span>
                                                         <span className="ml-6 flex h-7 items-center">
                                                             {open ? (
-                                                                <PlusSmallIcon className="h-6 w-6" aria-hidden="true" />
-                                                            ) : (
                                                                 <MinusSmallIcon className="h-6 w-6" aria-hidden="true" />
+                                                            ) : (
+                                                                <PlusSmallIcon className="h-6 w-6" aria-hidden="true" />
                                                             )}
                                                         </span>
                                                     </Disclosure.Button>
