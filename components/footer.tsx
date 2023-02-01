@@ -75,7 +75,7 @@ export const Footer = () => {
             </a>
           ))}
         </div>
-        <div className="mt-4 md:order-1 md:mt-0 flex space-x-1 justify-center">
+        <div className="mt-8 md:order-1 md:mt-0 flex space-x-1 justify-center">
           <a href="https://twitter.com/GuacSenpai">
             <p className="text-center text-sm leading-5 font-medium text-white">
               Built By Guac
