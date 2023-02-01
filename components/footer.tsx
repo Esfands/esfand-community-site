@@ -75,12 +75,18 @@ export const Footer = () => {
             </a>
           ))}
         </div>
-        <div className="mt-8 md:order-1 md:mt-0">
+        <div className="mt-8 md:order-1 md:mt-0 flex space-x-1 justify-center">
           <a href="https://twitter.com/GuacSenpai">
             <p className="text-center text-sm leading-5 font-medium text-white">
               Built By Guac
             </p>
           </a>
+            <p className="text-center text-sm leading-5 font-medium text-white">
+              &amp;&nbsp;
+              <a href="https://twitter.com/Mahcksimus">
+                Mahcks
+              </a>
+            </p>
         </div>
       </div>
     </footer>
