@@ -76,11 +76,11 @@ export const Footer = () => {
           ))}
         </div>
         <div className="mt-8 md:order-1 md:mt-0 flex space-x-1 justify-center">
-          <a href="https://twitter.com/GuacSenpai">
+          
             <p className="text-center text-sm leading-5 font-medium text-white">
-              Built By Guac
+              Built By&nbsp;
+              <a href="https://twitter.com/GuacSenpai">Guac</a>
             </p>
-          </a>
             <p className="text-center text-sm leading-5 font-medium text-white">
               &amp;&nbsp;
               <a href="https://twitter.com/Mahcksimus">
