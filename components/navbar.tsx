@@ -47,6 +47,10 @@ export const Navbar = () => {
                         title="Community"
                         entries={[
                           {
+                            entry: "Recap",
+                            path: "/community/recap",
+                          },
+                          {
                             entry: "Game Servers",
                             path: "/community/gameservers",
                           },
@@ -119,6 +123,10 @@ export const Navbar = () => {
                 <MobileDropdown
                   title="Community"
                   childRoutes={[
+                    {
+                      title: "Recap",
+                      path: "/community/recap",
+                    },
                     {
                       title: "Game Servers",
                       path: "/community/gameservers",
