@@ -3,11 +3,25 @@ import { MinusSmallIcon, PlusSmallIcon, BellAlertIcon, CloudArrowDownIcon, CodeB
 
 const faqs = [
     {
-        question: "What's the best thing about Switzerland?",
-        answer:
-            "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+        question: "Can I contribute to the extension?",
+        answer: "The extension is open source! You are free to contribute changes in the Esfands github team repo.",
     },
-    // More questions...
+    {
+        question: "How do I disable notifications?",
+        answer: "You can click the settings button in the extension and choose which notifications you would like to recieve."
+    },
+    {
+        question: "Does it collect any user data?",
+        answer: "The extension collects no user data. I unfortunately have a degree of moral integrity and turn down the offers to sell user data that come into my email."
+    },
+    {
+        question: "Is it a crypto miner?",
+        answer: "The extension is not a crypto miner. It is completely open source so you can check for yourself. I lose money hosting the extension services."
+    },
+    {
+        question: "My question isn't here. Where can I ask something more specific?",
+        answer: "You can reach out to me via email by contacting me at guac@guacsenpai.com"
+    }
 ]
 const features = [
     {
