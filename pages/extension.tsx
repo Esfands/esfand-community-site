@@ -8,7 +8,7 @@ const faqs = [
     },
     {
         question: "How do I disable notifications?",
-        answer: "You can click the settings button in the extension and choose which notifications you would like to recieve."
+        answer: "You can click the settings button in the extension and choose which notifications you would like to receive."
     },
     {
         question: "Does it collect any user data?",
