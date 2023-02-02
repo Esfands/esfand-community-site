@@ -1,4 +1,5 @@
 import { GameServerPanel } from "../../components/gameserverpanel";
+import Head from "../../components/head";
 
 interface Server {
   name: string;
@@ -51,18 +52,22 @@ const servers: Server[] = [
 
 export default function Gameservers() {
   return (
-    <main className="-mt-24">
-      <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="px-4 py-8 sm:px-0">
-          <div className="overflow-hidden bg-white shadow rounded-lg">
-            <ul role="list" className="divide-y divide-gray-200">
-              {servers.map((server) => (
-                <GameServerPanel server={server} key={server.name} />
-              ))}
-            </ul>
+    <>
+      <Head title="Game Servers"/>
+      
+      <main className="-mt-24">
+        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="px-4 py-8 sm:px-0">
+            <div className="overflow-hidden bg-white shadow rounded-lg">
+              <ul role="list" className="divide-y divide-gray-200">
+                {servers.map((server) => (
+                  <GameServerPanel server={server} key={server.name} />
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

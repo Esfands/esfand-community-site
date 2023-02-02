@@ -1,5 +1,6 @@
 import { Disclosure } from '@headlessui/react'
 import { MinusSmallIcon, PlusSmallIcon, BellAlertIcon, CloudArrowDownIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
+import Head from '../components/head';
 
 const faqs = [
     {
@@ -50,6 +51,7 @@ const features = [
 export default function Extension() {
     return (
         <div>
+            <Head title='Extension'/>
             <main className="-mt-24 pb-8">
                 <h1 className="text-white font-bold text-2xl text-center pb-6">
                     Esfand Updates Extension

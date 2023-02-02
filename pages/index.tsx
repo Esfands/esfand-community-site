@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from '../components/head'
 import { ScheduleBox } from '../components/schedulebox'
 import { SocialCloud } from '../components/socialcloud'
 import { TwitchPanel } from '../components/twitchpanel'
@@ -8,13 +8,8 @@ import { YoutubePanel } from '../components/youtubepanel'
 export default function Home(props) {
   return (
     <>
-      <Head>
-        <title>Esfand Community Site</title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      
+      <Head title='Home'/>
+
       <main className="-mt-24 pb-8">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <h1 className="sr-only">Esfand Home Page</h1>
