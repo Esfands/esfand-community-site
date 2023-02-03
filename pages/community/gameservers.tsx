@@ -39,12 +39,12 @@ const servers: Server[] = [
     art: "https://static-cdn.jtvnw.net/ttv-boxart/31376_IGDB-144x192.jpg",
   },
   {
-    name: "Valheim Server 1 Placeholder",
+    name: "Escord Valheim Server",
     info: "Vanilla - No Mods",
-    status: false,
-    players: "0/20",
-    address: "Pending",
-    aaa: "",
+    status: true,
+    players: "10",
+    address: "vh.esfans.net",
+    aaa: "????",
     art: "https://static-cdn.jtvnw.net/ttv-boxart/508455_IGDB-144x192.jpg",
   },
 ];
