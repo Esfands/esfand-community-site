@@ -27,15 +27,21 @@ export const ScheduleEvent = ({ segment }) => {
 
     if (isLoaded) {
         return (
-            <li className="flex py-4">
+            <li className="flex flex-wrap py-4">
                 <div className="flex min-w-0 flex-1 items-center">
-                      <div className="flex-shrink-0">
+                    <div className="flex">
                         <img className="h-20 w-16" src={boxArtUrl} alt="" />
-                      </div>
-                    <p className="px-2 text-sm font-medium text-white">{segment.title}</p>
-                    <p className="text-sm text-gray-500">{new Date(segment.start_time).toLocaleString('en-US')}</p>
+                        <div>
+                            <p className="px-2 text-sm font-medium text-white">
+                                {segment.title}
+                            </p>
+                            <p className="px-2 py-1 text-sm text-gray-500">
+                                {new Date(segment.start_time).toLocaleString("en-US")}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </li>
+          </li>
         );
     } else {
         return (
