@@ -30,7 +30,8 @@ export const Navbar = () => {
                   <div className="flex-shrink-0">
                     <p className="text-white font-extrabold">ESF</p>
                   </div>
-                  <div className="hidden lg:ml-10 lg:block">
+                </div>
+                <div className="hidden lg:ml-10 lg:block">
                     <div className="flex space-x-4">
                       <Link
                         href="/"
@@ -101,7 +102,6 @@ export const Navbar = () => {
                       </Link>
                     </div>
                   </div>
-                </div>
                 <div className="flex lg:hidden">
                   {/* Mobile menu button */}
                   <Disclosure.Button className="ui-open inline-flex items-center justify-center rounded-md bg-gray-600 p-2 text-gray-200 hover:bg-gray-500 hover:bg-opacity-75 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-600">
