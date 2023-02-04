@@ -45,7 +45,7 @@ const servers: Server[] = [
     status: true,
     players: "10",
     address: "vh.esfans.net",
-    aaa: "????",
+    aaa: "esfand1",
     art: "https://static-cdn.jtvnw.net/ttv-boxart/508455_IGDB-144x192.jpg",
   },
 ];
