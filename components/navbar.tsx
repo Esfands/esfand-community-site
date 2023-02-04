@@ -14,6 +14,7 @@ export const Navbar = () => {
   // I'd like to make a simplier approach in the future.
   const [communityTabActive, setCommunityTabActive] = useState<boolean>(false);
   const [showsTabActive, setShowsTabActive] = useState<boolean>(false);
+  const [eventsTabActive, setEventsTabActive] = useState<boolean>(false);
 
   return (
     <div className="bg-gray-800 pb-32">
@@ -42,6 +43,17 @@ export const Navbar = () => {
                       >
                         Home
                       </Link>
+
+                      <Dropdown
+                        title="Events"
+                        entries={[
+                          {
+                            entry: "Boomer Month",
+                            path: "/events/boomermonth",
+                          },
+                        ]}
+                        pathname={router.pathname}
+                      />
 
                       <Dropdown
                         title="Community"
@@ -119,6 +131,19 @@ export const Navbar = () => {
                     Home
                   </Link>
                 </Disclosure.Button>
+
+                <MobileDropdown
+                  title="Events"
+                  childRoutes={[
+                    {
+                      title: "Boomer Month",
+                      path: "/events/boomermonth",
+                    },
+                  ]}
+                  pathname={router.pathname}
+                  setTabActive={setEventsTabActive}
+                  tabIsActive={eventsTabActive}
+                />
 
                 <MobileDropdown
                   title="Community"
