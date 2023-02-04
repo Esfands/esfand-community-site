@@ -24,7 +24,7 @@ interface Server {
 function getStatus(serverStatus: boolean) {
   if (serverStatus) {
     return (
-      <p className="mt-2 flex items-center text-sm text-gray-500">
+      <p className="mt-2 flex items-center text-sm text-gray-400">
         <CheckCircleIcon
           className="mr-1.5 h-5 w-5 flex-shrink-0 text-green-400"
           aria-hidden="true"
@@ -35,7 +35,7 @@ function getStatus(serverStatus: boolean) {
   }
 
   return (
-    <p className="mt-2 flex items-center text-sm text-gray-500">
+    <p className="mt-2 flex items-center text-sm text-gray-400">
       <XCircleIcon
         className="mr-1.5 h-5 w-5 flex-shrink-0 text-red-600"
         aria-hidden="true"
@@ -48,9 +48,9 @@ function getStatus(serverStatus: boolean) {
 function getAAA(serverAAA: string) {
   if (serverAAA != "") {
     return (
-      <p className="mt-2 flex items-center text-sm text-gray-500">
+      <p className="mt-2 flex items-center text-sm text-gray-400">
         <LockClosedIcon
-          className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+          className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-300"
           aria-hidden="true"
         />
         {serverAAA}
@@ -70,12 +70,12 @@ export const GameServerPanel = ({ server }: Props) => {
             </div>
             <div className="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
               <div>
-                <p className="text-sm font-medium text-indigo-600">
+                <p className="text-sm font-medium text-white">
                   {server.name}
                 </p>
-                <p className="mt-2 flex items-center text-sm text-gray-500">
+                <p className="mt-2 flex items-center text-sm text-gray-400">
                   <InformationCircleIcon
-                    className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+                    className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-300"
                     aria-hidden="true"
                   />
                   <span>{server.info}</span>
@@ -84,17 +84,17 @@ export const GameServerPanel = ({ server }: Props) => {
               <div className="md:block">
                 <div>
                   {getStatus(server.status)}
-                  <p className="mt-2 flex items-center text-sm text-gray-500">
+                  <p className="mt-2 flex items-center text-sm text-gray-400">
                     <ServerStackIcon
-                      className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+                      className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-300"
                       aria-hidden="true"
                     />
                     {server.address}
                   </p>
                   {getAAA(server.aaa)}
-                  <p className="mt-2 flex items-center text-sm text-gray-500">
+                  <p className="mt-2 flex items-center text-sm text-gray-400">
                     <UserCircleIcon
-                      className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+                      className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-300"
                       aria-hidden="true"
                     />
                     Players {server.players}
