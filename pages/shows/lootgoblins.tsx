@@ -1,6 +1,7 @@
 import { Disclosure } from "@headlessui/react";
 import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline";
 import Head from "../../components/head";
+import { getThumbnail } from "../../utils";
 
 const seasons = [
   {
@@ -80,16 +81,6 @@ const seasons = [
 ];
 
 export default function LootGoblins() {
-  // Takes in a video URL and parses out the video id and returns a thumbnail
-  function getThumbnail(videoUrl: string) {
-    const res = videoUrl.match(
-      /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/
-    );
-    return res
-      ? `https://img.youtube.com/vi/${res[1]}/mqdefault.jpg`
-      : videoUrl;
-  }
-
   return (
     <>
       {Head("Loot Goblins")}
