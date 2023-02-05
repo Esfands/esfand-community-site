@@ -178,9 +178,9 @@ export default function LootGoblins() {
                                           target="_blank"
                                           href={episode.url}
                                         >
-                                          <div className="overflow-hidden">
+                                          <div className="">
                                             <img
-                                              className="-m-[10% 0] w-[100%]"
+                                              className="-m-[10% 0] w-[100%] rounded-lg"
                                               alt="thumbnail"
                                               src={episode.thumbnail}
                                             />
