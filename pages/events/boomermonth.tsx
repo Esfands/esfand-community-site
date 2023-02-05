@@ -14,7 +14,7 @@ const possibleGames = [
 ]
 
 export default function BoomerMonth(props) {
-    
+    console.log(props.possibleGames);
     const [games, setGames] = useState<any[]>([]);
     const [playedGames, setPlayedGames] = useState<any[]>([]);
     const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -25,8 +25,7 @@ export default function BoomerMonth(props) {
             try {
                 console.log('fsd');
                 if (!isLoaded) {
-                    console.log(props.possibleGames);
-                    setGames(props.posibleGames.data);
+                    setGames(props.possibleGames.data);
                 }
                 setIsLoaded(true);
             } catch {
@@ -80,7 +79,6 @@ export async function getStaticProps() {
     const getPossibleGamesUrl = `https://twitch.otkdata.com/api/games?id=${possibleGames.join(',')}`;
     const gameResponse = await fetch(getPossibleGamesUrl, { method: "GET", mode: "cors" });
     const possibleGamesData = await gameResponse.json();
-    console.log(possibleGamesData);
     return {
       props: {
         possibleGames: possibleGamesData
