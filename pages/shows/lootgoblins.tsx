@@ -7,52 +7,36 @@ const seasons = [
     season: 1,
     episodes: [
       {
-        episode: 1,
         title: "S1:E1 ft. Emiru",
         url: "https://www.youtube.com/watch?v=5wOzaSvEtVQ&list=PLUwsvlrbXgCnMN7fUSZ1hQSenZkvQ0Z6w&index=1",
-        thumbnail: "https://img.youtube.com/vi/MbA1Joaz1Go/mqdefault.jpg",
       },
       {
-        episode: 2,
         title: "S1:E2 ft. Emiru",
         url: "https://www.youtube.com/watch?v=5wOzaSvEtVQ&list=PLUwsvlrbXgCnMN7fUSZ1hQSenZkvQ0Z6w&index=1",
-        thumbnail: "https://img.youtube.com/vi/MbA1Joaz1Go/mqdefault.jpg",
       },
       {
-        episode: 3,
         title: "S1:E3 ft. Emiru",
         url: "https://www.youtube.com/watch?v=5wOzaSvEtVQ&list=PLUwsvlrbXgCnMN7fUSZ1hQSenZkvQ0Z6w&index=1",
-        thumbnail: "https://img.youtube.com/vi/MbA1Joaz1Go/mqdefault.jpg",
       },
       {
-        episode: 4,
         title: "S1:E4 ft. SpaceBoy, Saab, Penta & Kyle",
         url: "https://www.youtube.com/watch?v=9DxAwJTx8Rw&list=PLUwsvlrbXgCnMN7fUSZ1hQSenZkvQ0Z6w&index=2",
-        thumbnail: "https://img.youtube.com/vi/MbA1Joaz1Go/mqdefault.jpg",
       },
       {
-        episode: 5,
         title: "S1:E5 ft. Nmplol, Alinity, MitchJones & Malena",
         url: "https://www.youtube.com/watch?v=hGjGSqfoG9Y&list=PLUwsvlrbXgCnMN7fUSZ1hQSenZkvQ0Z6w&index=3",
-        thumbnail: "https://img.youtube.com/vi/MbA1Joaz1Go/mqdefault.jpg",
       },
       {
-        episode: 6,
         title: "S1:E6 ft. Tectone, RichWCampbell, Cyr & Graycen",
         url: "https://www.youtube.com/watch?v=dIdunDeUBNs&list=PLUwsvlrbXgCnMN7fUSZ1hQSenZkvQ0Z6w&index=4",
-        thumbnail: "https://img.youtube.com/vi/MbA1Joaz1Go/mqdefault.jpg",
       },
       {
-        episode: 7,
         title: "S1:E7 ft. JSchlatt, BBNO$, JustAMinx & Erobb221",
         url: "https://www.youtube.com/watch?v=MbA1Joaz1Go&list=PLUwsvlrbXgCnMN7fUSZ1hQSenZkvQ0Z6w&index=5",
-        thumbnail: "https://img.youtube.com/vi/MbA1Joaz1Go/mqdefault.jpg",
       },
       {
-        episode: 8,
         title: "S1:E8 Asmongold, Jessica Nigri, Bruce, Nmplol",
         url: "https://www.youtube.com/watch?v=u9_0tG-G1-4&list=PLUwsvlrbXgCnMN7fUSZ1hQSenZkvQ0Z6w&index=6",
-        thumbnail: "https://img.youtube.com/vi/u9_0tG-G1-4/mqdefault.jpg",
       },
     ],
   },
@@ -60,58 +44,52 @@ const seasons = [
     season: 2,
     episodes: [
       {
-        episode: 1,
         title: "S2:E1 ft. Jschlatt, Emiru, Esfand",
-        url: "https://www.youtube.com/watch?v=5wOzaSvEtVQ&list=PLUwsvlrbXgCnMN7fUSZ1hQSenZkvQ0Z6w&index=2",
-        thumbnail: "https://img.youtube.com/vi/8SVHf8hn-n4/mqdefault.jpg",
+        url: "https://www.youtube.com/watch?v=8SVHf8hn-n4&list=PL1Zyb1lxxOyGM8-jFxZqt3LCsjanJwVA7&index=5",
       },
       {
-        episode: 2,
         title: "S2:E2 ft. Veibae, Sodapoppin, Russel",
         url: "https://www.youtube.com/watch?v=QWr0ld1ai7A&list=PL1Zyb1lxxOyGM8-jFxZqt3LCsjanJwVA7&index=6",
-        thumbnail: "https://img.youtube.com/vi/QWr0ld1ai7A/mqdefault.jpg",
       },
       {
-        episode: 3,
         title: "S2:E3 ft. Mia Malkova, Alinity, Rich Campbell",
         url: "https://www.youtube.com/watch?v=emNEFDFFXns&list=PL1Zyb1lxxOyGM8-jFxZqt3LCsjanJwVA7&index=7",
-        thumbnail: "https://img.youtube.com/vi/emNEFDFFXns/mqdefault.jpg",
       },
       {
-        episode: 4,
         title: "S2:E4 ft. Moistcr1tikal, Emiru, Zoil",
         url: "https://www.youtube.com/watch?v=JXHXqfS1Pn4&list=PL1Zyb1lxxOyGM8-jFxZqt3LCsjanJwVA7&index=8",
-        thumbnail: "https://img.youtube.com/vi/JXHXqfS1Pn4/mqdefault.jpg",
       },
       {
-        episode: 5,
         title: "S2:E5 ft. Erobb, NYYXXII, Cyr",
         url: "https://www.youtube.com/watch?v=RTw50gre0DI&list=PL1Zyb1lxxOyGM8-jFxZqt3LCsjanJwVA7&index=9",
-        thumbnail: "https://img.youtube.com/vi/RTw50gre0DI/mqdefault.jpg",
       },
       {
-        episode: 6,
         title: "S2:E6 ft. Fandy, HAchubby, SypherPK",
         url: "https://www.youtube.com/watch?v=R3Q_iRbVUqg&list=PL1Zyb1lxxOyGM8-jFxZqt3LCsjanJwVA7&index=10",
-        thumbnail: "https://img.youtube.com/vi/R3Q_iRbVUqg/mqdefault.jpg",
       },
       {
-        episode: 7,
         title: "S2:E7 ft. Sodapoppin, Timmac, Burn",
         url: "https://www.youtube.com/watch?v=wOw8leisl_8&list=PL1Zyb1lxxOyGM8-jFxZqt3LCsjanJwVA7&index=11",
-        thumbnail: "https://img.youtube.com/vi/wOw8leisl_8/mqdefault.jpg",
       },
       {
-        episode: 8,
         title: "S2:E8 ft. Asmongold, AustinShow, PeachJars",
-        url: "https://www.youtube.com/watch?v=wOw8leisl_8&list=PL1Zyb1lxxOyGM8-jFxZqt3LCsjanJwVA7&index=11",
-        thumbnail: "https://img.youtube.com/vi/96OZGFamvRU/mqdefault.jpg",
+        url: "https://www.youtube.com/watch?v=96OZGFamvRU&list=PL1Zyb1lxxOyGM8-jFxZqt3LCsjanJwVA7&index=12",
       },
     ],
   },
 ];
 
 export default function LootGoblins() {
+  // Takes in a video URL and parses out the video id and returns a thumbnail
+  function getThumbnail(videoUrl: string) {
+    const res = videoUrl.match(
+      /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/
+    );
+    return res
+      ? `https://img.youtube.com/vi/${res[1]}/mqdefault.jpg`
+      : videoUrl;
+  }
+
   return (
     <>
       {Head("Loot Goblins")}
@@ -171,26 +149,28 @@ export default function LootGoblins() {
                                 </dt>
                                 <Disclosure.Panel as="dd" className="mt-2 px-2">
                                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    {season.episodes.map((episode) => (
-                                      <div key={episode.episode}>
-                                        <a
-                                          rel="noreferrer"
-                                          target="_blank"
-                                          href={episode.url}
-                                        >
-                                          <div className="">
-                                            <img
-                                              className="-m-[10% 0] w-[100%] rounded-lg"
-                                              alt="thumbnail"
-                                              src={episode.thumbnail}
-                                            />
-                                          </div>
-                                        </a>
-                                        <p className="text-base leading-7 text-gray-300 font-bold">
-                                          {episode.title}
-                                        </p>
-                                      </div>
-                                    ))}
+                                    {season.episodes.map(
+                                      (episode, episodeIndex) => (
+                                        <div key={episodeIndex}>
+                                          <a
+                                            rel="noreferrer"
+                                            target="_blank"
+                                            href={episode.url}
+                                          >
+                                            <div className="">
+                                              <img
+                                                className="-m-[10% 0] w-[100%] rounded-lg"
+                                                alt="thumbnail"
+                                                src={getThumbnail(episode.url)}
+                                              />
+                                            </div>
+                                          </a>
+                                          <p className="text-base leading-7 text-gray-300 font-bold">
+                                            {episode.title}
+                                          </p>
+                                        </div>
+                                      )
+                                    )}
                                   </div>
                                 </Disclosure.Panel>
                               </>
