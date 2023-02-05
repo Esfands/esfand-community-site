@@ -32,48 +32,52 @@ const MobileDropdown = ({
   return (
     /* Open the disclosure if a child route is selected */
     <Disclosure defaultOpen={routes.includes(pathname)}>
-      <Disclosure.Button
-        /* If one of the child routes is selected, make the parent highlighted */
-        className={classNames(
-          routes.includes(pathname)
-            ? "bg-gray-700 text-white"
-            : "text-white hover:bg-gray-500 hover:bg-opacity-75",
-          "block rounded-md py-2 px-3 text-base font-medium w-full"
-        )}
-        onClick={() => {
-          setTabActive(!tabIsActive);
-        }}
-      >
-        <span>
-          <div className="flex space-x-2 items-center">
-            {tabIsActive ? (
-              <ChevronRightIcon className="h-4 w-4 " aria-hidden="true" />
-            ) : (
-              <ChevronDownIcon className="h-4 w-4 " aria-hidden="true" />
+      {({ open }) => (
+        <>
+          <Disclosure.Button
+            /* If one of the child routes is selected, make the parent highlighted */
+            className={classNames(
+              routes.includes(pathname)
+                ? "bg-gray-700 text-white"
+                : "text-white hover:bg-gray-500 hover:bg-opacity-75",
+              "block rounded-md py-2 px-3 text-base font-medium w-full"
             )}
-            <p>{title}</p>
-          </div>
-        </span>
-      </Disclosure.Button>
-      <Disclosure.Panel>
-        <div className="flex flex-wrap space-y-2">
-          {childRoutes.map((route, rIndex) => (
-            <Disclosure.Button key={rIndex} className="w-full text-start">
-              <Link
-                href={route.path}
-                className={classNames(
-                  pathname == route.path
-                    ? "bg-gray-700 text-white"
-                    : "text-white hover:bg-gray-500 hover:bg-opacity-75",
-                  `block rounded-md py-2 px-3 text-base font-medium ml-8`
+            onClick={() => {
+              setTabActive(!tabIsActive);
+            }}
+          >
+            <span>
+              <div className="flex space-x-2 items-center">
+                {open ? (
+                  <ChevronDownIcon className="h-4 w-4 " aria-hidden="true" />
+                ) : (
+                  <ChevronRightIcon className="h-4 w-4 " aria-hidden="true" />
                 )}
-              >
-                {route.title}
-              </Link>
-            </Disclosure.Button>
-          ))}
-        </div>
-      </Disclosure.Panel>
+                <p>{title}</p>
+              </div>
+            </span>
+          </Disclosure.Button>
+          <Disclosure.Panel>
+            <div className="flex flex-wrap space-y-2">
+              {childRoutes.map((route, rIndex) => (
+                <Disclosure.Button key={rIndex} className="w-full text-start">
+                  <Link
+                    href={route.path}
+                    className={classNames(
+                      pathname == route.path
+                        ? "bg-gray-700 text-white"
+                        : "text-white hover:bg-gray-500 hover:bg-opacity-75",
+                      `block rounded-md py-2 px-3 text-base font-medium ml-8`
+                    )}
+                  >
+                    {route.title}
+                  </Link>
+                </Disclosure.Button>
+              ))}
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
     </Disclosure>
   );
 };
