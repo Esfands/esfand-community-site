@@ -14,7 +14,6 @@ const possibleGames = [
 ]
 
 export default function BoomerMonth(props) {
-    console.log(props.possibleGames);
     const [games, setGames] = useState<any[]>([]);
     const [playedGames, setPlayedGames] = useState<any[]>([]);
     const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -23,7 +22,6 @@ export default function BoomerMonth(props) {
     useEffect(() => {
         const setupGameList = async () => {
             try {
-                console.log('fsd');
                 if (!isLoaded) {
                     setGames(props.possibleGames.data);
                 }
@@ -83,5 +81,6 @@ export async function getStaticProps() {
       props: {
         possibleGames: possibleGamesData
       },
+      revalidate: 86400
     };
   }
