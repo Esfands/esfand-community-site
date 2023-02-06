@@ -56,7 +56,7 @@ export default function BoomerMonth(props) {
                                         {games.map((game) => (
                                             <li key={game.id} className="relative">
                                             <div className="aspect-h-7 block overflow-hidden rounded-lg">
-                                                <img src={game.box_art_url.replace('{width}', 138).replace('{height}', 190)} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
+                                                <img src={game.box_art_url.replace('{width}', 144).replace('{height}', 192)} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
                                             </div>
                                             <p className="pointer-events-none w-36 mt-2 block truncate text-sm font-medium text-white">{game.name}</p>
                                             </li>
