@@ -30,7 +30,7 @@ export const VodDropdown = ({ buttonText, vods }: DropdownProps) => {
                     <div className="py-1">
                         {vods.map((vod, i) => (
                             <Menu.Item>
-                                <a href={`https://www.twitch.tv/videos/${vod}`} target="_blank" rel="noreferrer" className='text-gray-700 block px-4 py-2 text-sm'>
+                                <a href={`https://www.twitch.tv/videos/${vod}`} target="_blank" rel="noreferrer" className='text-gray-700 block px-4 py-2 text-sm hover:bg-slate-50'>
                                     Part #{i+1}
                                 </a>
                             </Menu.Item>
