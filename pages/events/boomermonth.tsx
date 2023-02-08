@@ -24,6 +24,7 @@ export default function BoomerMonth(props) {
             try {
                 if (!isLoaded) {
                     setGames(props.possibleGames.data);
+                    setPlayedGames(props.playedGames.data);
                 }
                 setIsLoaded(true);
             } catch {
@@ -48,6 +49,21 @@ export default function BoomerMonth(props) {
                     <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                         <div className="px-4 py-8 sm:px-0">
                             <div className="overflow-hidden bg-[#1b2126] shadow rounded-lg pb-5">
+                                <div className="flex justify-center text-white text-2xl py-2 font-bold">
+                                    <h1>Games Esfand Played</h1>
+                                </div>
+                                <div>
+                                    <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8 place-items-center">
+                                        {games.map((game) => (
+                                            <li key={game.id} className="relative">
+                                            <div className="aspect-h-7 block overflow-hidden rounded-lg">
+                                                <img src={game.box_art_url.replace('{width}', 144).replace('{height}', 190)} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
+                                            </div>
+                                            <p className="pointer-events-none w-36 mt-2 block truncate text-sm font-medium text-white">{game.name}</p>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                                 <div className="flex justify-center text-white text-2xl py-2 font-bold">
                                     <h1>Games Esfand Might Play</h1>
                                 </div>
