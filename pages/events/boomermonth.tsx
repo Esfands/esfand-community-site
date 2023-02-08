@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Head from "../../components/head";
+import { VodDropdown } from "../../components/voddropdown";
 
 type GameDetail = {
     id: string,
@@ -24,7 +25,7 @@ type BoomerMonthProps = {
     playedGames: Game[];
 }
 
-const games : Game[] = [
+const games: Game[] = [
     {
         id: 980679052,
         vods: [1719978446, 1721257663],
@@ -133,7 +134,7 @@ const games : Game[] = [
 ]
 
 
-export default function BoomerMonth({ playedGames, possibleGames } : BoomerMonthProps) {
+export default function BoomerMonth({ playedGames, possibleGames }: BoomerMonthProps) {
     console.log(possibleGames);
     const [games, setGames] = useState<any[]>([]);
     const [playedGamesList, setPlayedGamesList] = useState<any[]>([]);
@@ -179,10 +180,11 @@ export default function BoomerMonth({ playedGames, possibleGames } : BoomerMonth
                                     <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:gap-x-3 lg:grid-cols-6 xl:gap-x-2 place-items-center">
                                         {playedGamesList.map((game) => (
                                             <li key={game.id} className="relative">
-                                            <div className="aspect-h-7 block overflow-hidden rounded-lg">
-                                                <img src={game.data.box_art_url.replace('{width}', 144).replace('{height}', 190)} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
-                                            </div>
-                                            <p className="pointer-events-none w-36 mt-2 block truncate text-sm font-medium text-white">{game.data.name}</p>
+                                                <div className="aspect-h-7 block overflow-hidden rounded-lg">
+                                                    <img src={game.data.box_art_url.replace('{width}', 144).replace('{height}', 190)} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
+                                                </div>
+                                                <p className="pointer-events-none w-36 mt-2 block truncate text-sm font-medium text-white">{game.data.name}</p>
+                                                <VodDropdown buttonText="Vods" vods={game.vods} />
                                             </li>
                                         ))}
                                     </ul>
@@ -194,10 +196,10 @@ export default function BoomerMonth({ playedGames, possibleGames } : BoomerMonth
                                     <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:gap-x-3 lg:grid-cols-6 xl:gap-x-2 place-items-center">
                                         {possibleGamesList.map((game) => (
                                             <li key={game.id} className="relative">
-                                            <div className="aspect-h-7 block overflow-hidden rounded-lg">
-                                                <img src={game.data.box_art_url.replace('{width}', 144).replace('{height}', 190)} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
-                                            </div>
-                                            <p className="pointer-events-none w-36 mt-2 block truncate text-sm font-medium text-white">{game.data.name}</p>
+                                                <div className="aspect-h-7 block overflow-hidden rounded-lg">
+                                                    <img src={game.data.box_art_url.replace('{width}', 144).replace('{height}', 190)} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
+                                                </div>
+                                                <p className="pointer-events-none w-36 mt-2 block truncate text-sm font-medium text-white">{game.data.name}</p>
                                             </li>
                                         ))}
                                     </ul>
@@ -209,11 +211,11 @@ export default function BoomerMonth({ playedGames, possibleGames } : BoomerMonth
             </>
         );
     }
-    
+
 }
 
 export async function getStaticProps() {
-    const allGames : Map<number, Game> = new Map();
+    const allGames: Map<number, Game> = new Map();
 
     games.forEach(game => {
         allGames.set(game.id, game);
@@ -221,7 +223,7 @@ export async function getStaticProps() {
 
     const getGamesUrl = `https://twitch.otkdata.com/api/games?id=${games.map(game => game.id).join(',')}`;
     const gamesResponse = await fetch(getGamesUrl, { method: "GET", mode: "cors" });
-    const gamesData : GameDetailResponse = await gamesResponse.json();
+    const gamesData: GameDetailResponse = await gamesResponse.json();
 
     gamesData.data.forEach(game => {
         const gameItem = allGames.get(+game.id);
@@ -231,10 +233,10 @@ export async function getStaticProps() {
     });
 
     return {
-      props: {
-        possibleGames: Array.from(allGames).map(([number, game]) => (game)).filter(x => !x.played),
-        playedGames: Array.from(allGames).map(([number, game]) => (game)).filter(x => x.played),
-      },
-      revalidate: 86400
+        props: {
+            possibleGames: Array.from(allGames).map(([, game]) => (game)).filter(x => !x.played),
+            playedGames: Array.from(allGames).map(([, game]) => (game)).filter(x => x.played),
+        },
+        revalidate: 86400
     };
-  }
+}
