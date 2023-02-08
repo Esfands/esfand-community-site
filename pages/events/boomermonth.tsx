@@ -53,7 +53,7 @@ export default function BoomerMonth(props) {
                                     <h1>Games Esfand Played</h1>
                                 </div>
                                 <div>
-                                    <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8 place-items-center">
+                                    <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:gap-x-3 lg:grid-cols-6 xl:gap-x-2 place-items-center">
                                         {playedGames.map((game) => (
                                             <li key={game.id} className="relative">
                                             <div className="aspect-h-7 block overflow-hidden rounded-lg">
@@ -68,10 +68,10 @@ export default function BoomerMonth(props) {
                                     <h1>Games Esfand Might Play</h1>
                                 </div>
                                 <div>
-                                    <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8 place-items-center">
+                                    <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:gap-x-3 lg:grid-cols-6 xl:gap-x-2 place-items-center">
                                         {games.map((game) => (
                                             <li key={game.id} className="relative">
-                                            <div className="aspect-h-7 block overflow-hidden">
+                                            <div className="aspect-h-7 block overflow-hidden rounded-lg">
                                                 <img src={game.box_art_url.replace('{width}', 144).replace('{height}', 190)} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
                                             </div>
                                             <p className="pointer-events-none w-36 mt-2 block truncate text-sm font-medium text-white">{game.name}</p>
