@@ -106,77 +106,80 @@ export default function LootGoblins() {
                       </div>
                     </div>
                   </div>
-                  <div className="sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen">
-                    <div className="px-4 py-8 sm:px-0">
-                      <dl className="space-y-6 divide-y divide-gray-300/10">
-                        <div className="flex space-x-2"></div>
-                        {seasons.map((season) => (
-                          <Disclosure
-                            as="div"
-                            key={season.season}
-                            className="pt-6"
-                          >
-                            {({ open }) => (
-                              <>
-                                <dt>
-                                  <Disclosure.Button className="flex w-full items-start justify-between text-left">
-                                    <span className="text-lg font-semibold leading-7">
-                                      Season {season.season}
-                                    </span>
-                                    <span className="ml-6 flex h-7 items-center">
-                                      {open ? (
-                                        <MinusSmallIcon
-                                          className="h-6 w-6"
-                                          aria-hidden="true"
-                                        />
-                                      ) : (
-                                        <PlusSmallIcon
-                                          className="h-6 w-6"
-                                          aria-hidden="true"
-                                        />
-                                      )}
-                                    </span>
-                                  </Disclosure.Button>
-                                </dt>
-                                <Disclosure.Panel as="dd" className="mt-2 px-2">
-                                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    {season.episodes.map(
-                                      (episode, episodeIndex) => (
-                                        <div key={episodeIndex}>
-                                          <a
-                                            rel="noreferrer"
-                                            target="_blank"
-                                            href={episode.url}
-                                          >
-                                            <div className="">
-                                              <img
-                                                className="-m-[10% 0] w-[100%] rounded-lg"
-                                                alt="thumbnail"
-                                                src={getThumbnail(episode.url)}
-                                              />
-                                            </div>
-                                          </a>
-                                          <p className="text-base leading-7 text-gray-300 font-bold">
-                                            {episode.title}
-                                          </p>
-                                        </div>
-                                      )
-                                    )}
-                                  </div>
-                                </Disclosure.Panel>
-                              </>
-                            )}
-                          </Disclosure>
-                        ))}
-                      </dl>
-                    </div>
+                  <div className="sm:mt-10 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen">
+                    <iframe
+                      src="https://streamable.com/e/dht8i2?autoplay=1&nocontrols=1"
+                      frameBorder="0"
+                      width="100%"
+                      height="100%"
+                      allowFullScreen
+                      allow="autoplay"
+                      className="w-full h-96 left-0 top-0 overflow-hidden"
+                    ></iframe>
                   </div>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 -z-10 h-24 sm:h-32" />
               </div>
             </div>
           </div>
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8"></div>
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+            <div className="px-4 py-8 sm:px-0">
+              <dl className="space-y-6 divide-y divide-gray-300/10">
+                {seasons.map((season) => (
+                  <Disclosure as="div" key={season.season} className="pt-6">
+                    {({ open }) => (
+                      <>
+                        <dt>
+                          <Disclosure.Button className="flex w-full items-start justify-between text-left">
+                            <span className="text-lg font-semibold leading-7">
+                              Season {season.season}
+                            </span>
+                            <span className="ml-6 flex h-7 items-center">
+                              {open ? (
+                                <MinusSmallIcon
+                                  className="h-6 w-6"
+                                  aria-hidden="true"
+                                />
+                              ) : (
+                                <PlusSmallIcon
+                                  className="h-6 w-6"
+                                  aria-hidden="true"
+                                />
+                              )}
+                            </span>
+                          </Disclosure.Button>
+                        </dt>
+                        <Disclosure.Panel as="dd" className="mt-2 px-2">
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            {season.episodes.map((episode, episodeIndex) => (
+                              <div key={episodeIndex}>
+                                <a
+                                  rel="noreferrer"
+                                  target="_blank"
+                                  href={episode.url}
+                                >
+                                  <div className="">
+                                    <img
+                                      className="-m-[10% 0] w-[100%] rounded-lg"
+                                      alt="thumbnail"
+                                      src={getThumbnail(episode.url)}
+                                    />
+                                  </div>
+                                </a>
+                                <p className="text-base leading-7 text-gray-300 font-bold">
+                                  {episode.title}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>
+                ))}
+              </dl>
+            </div>
+          </div>
         </main>
       </div>
     </>
