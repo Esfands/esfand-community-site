@@ -1,21 +1,143 @@
 import { useEffect, useState } from "react";
 import Head from "../../components/head";
 
-const playedGames = [
+type GameDetail = {
+    id: string,
+    name: string,
+    boxArt: string,
+    igdbId: string
+}
+
+type Game = {
+    id: number;
+    vods: number[];
+    played: boolean;
+    data?: GameDetail;
+}
+
+type GameDetailResponse = {
+    data: GameDetail[];
+}
+
+type BoomerMonthProps = {
+    possibleGames: Game[];
+    playedGames: Game[];
+}
+
+const games : Game[] = [
     {
         id: 980679052,
-        vods: [1719978446, 1721257663]
+        vods: [1719978446, 1721257663],
+        played: true
+    },
+    {
+        id: 18893,
+        vods: [],
+        played: false
+    },
+    {
+        id: 15866,
+        vods: [],
+        played: false
+    },
+    {
+        id: 19423,
+        vods: [],
+        played: false
+    },
+    {
+        id: 2897,
+        vods: [],
+        played: false
+    },
+    {
+        id: 16376,
+        vods: [],
+        played: false
+    },
+    {
+        id: 3412,
+        vods: [],
+        played: false
+    },
+    {
+        id: 10322,
+        vods: [],
+        played: false
+    },
+    {
+        id: 517769,
+        vods: [],
+        played: false
+    },
+    {
+        id: 4523,
+        vods: [],
+        played: false
+    },
+    {
+        id: 17464,
+        vods: [],
+        played: false
+    },
+    {
+        id: 15820,
+        vods: [],
+        played: false
+    },
+    {
+        id: 519558,
+        vods: [],
+        played: false
+    },
+    {
+        id: 19156,
+        vods: [],
+        played: false
+    },
+    {
+        id: 10033,
+        vods: [],
+        played: false
+    },
+    {
+        id: 13420,
+        vods: [],
+        played: false
+    },
+    {
+        id: 6086,
+        vods: [],
+        played: false
+    },
+    {
+        id: 1705,
+        vods: [],
+        played: false
+    },
+    {
+        id: 1568081763,
+        vods: [],
+        played: false
+    },
+    {
+        id: 15631,
+        vods: [],
+        played: false
+    },
+    {
+        id: 9664,
+        vods: [],
+        played: false
     }
 ]
 
-const possibleGames = [
-   18893, 15866, 19423, 2897, 16376, 3412, 10322, 517769, 4523, 17464, 15820, 519558, 19156, 10033, 13420,
-   6086, 1705, 1568081763, 15631, 9664
-]
 
-export default function BoomerMonth(props) {
+export default function BoomerMonth({ playedGames, possibleGames } : BoomerMonthProps) {
+    console.log(possibleGames);
     const [games, setGames] = useState<any[]>([]);
-    const [playedGames, setPlayedGames] = useState<any[]>([]);
+    const [playedGamesList, setPlayedGamesList] = useState<any[]>([]);
+    const [possibleGamesList, setPossibleGamesList] = useState<any[]>([]);
     const [isLoaded, setIsLoaded] = useState<boolean>(false);
     const [isError, setError] = useState<boolean>(false);
 
@@ -23,8 +145,9 @@ export default function BoomerMonth(props) {
         const setupGameList = async () => {
             try {
                 if (!isLoaded) {
-                    setGames(props.possibleGames.data);
-                    setPlayedGames(props.playedGames.data);
+                    console.log(possibleGames);
+                    setPossibleGamesList(possibleGames);
+                    setPlayedGamesList(playedGames);
                 }
                 setIsLoaded(true);
             } catch {
@@ -54,12 +177,12 @@ export default function BoomerMonth(props) {
                                 </div>
                                 <div>
                                     <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:gap-x-3 lg:grid-cols-6 xl:gap-x-2 place-items-center">
-                                        {playedGames.map((game) => (
+                                        {playedGamesList.map((game) => (
                                             <li key={game.id} className="relative">
                                             <div className="aspect-h-7 block overflow-hidden rounded-lg">
-                                                <img src={game.box_art_url.replace('{width}', 144).replace('{height}', 190)} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
+                                                <img src={game.data.box_art_url.replace('{width}', 144).replace('{height}', 190)} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
                                             </div>
-                                            <p className="pointer-events-none w-36 mt-2 block truncate text-sm font-medium text-white">{game.name}</p>
+                                            <p className="pointer-events-none w-36 mt-2 block truncate text-sm font-medium text-white">{game.data.name}</p>
                                             </li>
                                         ))}
                                     </ul>
@@ -69,12 +192,12 @@ export default function BoomerMonth(props) {
                                 </div>
                                 <div>
                                     <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:gap-x-3 lg:grid-cols-6 xl:gap-x-2 place-items-center">
-                                        {games.map((game) => (
+                                        {possibleGamesList.map((game) => (
                                             <li key={game.id} className="relative">
                                             <div className="aspect-h-7 block overflow-hidden rounded-lg">
-                                                <img src={game.box_art_url.replace('{width}', 144).replace('{height}', 190)} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
+                                                <img src={game.data.box_art_url.replace('{width}', 144).replace('{height}', 190)} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
                                             </div>
-                                            <p className="pointer-events-none w-36 mt-2 block truncate text-sm font-medium text-white">{game.name}</p>
+                                            <p className="pointer-events-none w-36 mt-2 block truncate text-sm font-medium text-white">{game.data.name}</p>
                                             </li>
                                         ))}
                                     </ul>
@@ -90,23 +213,27 @@ export default function BoomerMonth(props) {
 }
 
 export async function getStaticProps() {
-    const getPossibleGamesUrl = `https://twitch.otkdata.com/api/games?id=${possibleGames.join(',')}`;
-    const gameResponse = await fetch(getPossibleGamesUrl, { method: "GET", mode: "cors" });
-    const possibleGamesData = await gameResponse.json();
+    const allGames : Map<number, Game> = new Map();
 
-    const playedGamesList = [];
-    playedGames.forEach(game => {
-        playedGamesList.push(game.id);
+    games.forEach(game => {
+        allGames.set(game.id, game);
     });
 
-    const getPlayedGamesUrl = `https://twitch.otkdata.com/api/games?id=${playedGamesList.join(',')}`;
-    const playedGamesResponse = await fetch(getPlayedGamesUrl, { method: "GET", mode: "cors" });
-    const playedGamesData = await playedGamesResponse.json();
+    const getGamesUrl = `https://twitch.otkdata.com/api/games?id=${games.map(game => game.id).join(',')}`;
+    const gamesResponse = await fetch(getGamesUrl, { method: "GET", mode: "cors" });
+    const gamesData : GameDetailResponse = await gamesResponse.json();
+
+    gamesData.data.forEach(game => {
+        const gameItem = allGames.get(+game.id);
+        if (gameItem != undefined) {
+            gameItem.data = game;
+        }
+    });
 
     return {
       props: {
-        possibleGames: possibleGamesData,
-        playedGames: playedGamesData
+        possibleGames: Array.from(allGames).map(([number, game]) => (game)).filter(x => !x.played),
+        playedGames: Array.from(allGames).map(([number, game]) => (game)).filter(x => x.played),
       },
       revalidate: 86400
     };
