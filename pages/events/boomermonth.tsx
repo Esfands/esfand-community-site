@@ -49,12 +49,12 @@ export default function BoomerMonth(props) {
                     <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                         <div className="px-4 py-8 sm:px-0">
                             <div className="overflow-hidden bg-[#1b2126] shadow rounded-lg pb-5">
-                                <div className="flex justify-center text-white text-2xl py-2 font-bold">
+                                <div className="flex justify-center text-white text-2xl py-10 font-bold">
                                     <h1>Games Esfand Played</h1>
                                 </div>
                                 <div>
                                     <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8 place-items-center">
-                                        {games.map((game) => (
+                                        {playedGames.map((game) => (
                                             <li key={game.id} className="relative">
                                             <div className="aspect-h-7 block overflow-hidden rounded-lg">
                                                 <img src={game.box_art_url.replace('{width}', 144).replace('{height}', 190)} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
@@ -93,9 +93,20 @@ export async function getStaticProps() {
     const getPossibleGamesUrl = `https://twitch.otkdata.com/api/games?id=${possibleGames.join(',')}`;
     const gameResponse = await fetch(getPossibleGamesUrl, { method: "GET", mode: "cors" });
     const possibleGamesData = await gameResponse.json();
+
+    const playedGamesList = [];
+    playedGames.forEach(game => {
+        playedGamesList.push(game.id);
+    });
+
+    const getPlayedGamesUrl = `https://twitch.otkdata.com/api/games?id=${playedGamesList.join(',')}`;
+    const playedGamesResponse = await fetch(getPlayedGamesUrl, { method: "GET", mode: "cors" });
+    const playedGamesData = await playedGamesResponse.json();
+
     return {
       props: {
-        possibleGames: possibleGamesData
+        possibleGames: possibleGamesData,
+        playedGames: playedGamesData
       },
       revalidate: 86400
     };
