@@ -88,7 +88,7 @@ export default function LootGoblins() {
       <div>
         <main className="-mt-24 pb-8">
           <div className="mx-auto">
-            <div className="bg-white">
+            <div className="bg-[#1b2126]">
               <div className="relative isolate overflow-hidden">
                 <div className="mx-auto max-w-7xl pt-10 pb-24 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:py-40 lg:px-8">
                   <div className="px-6 lg:px-0 lg:pt-4">
@@ -131,7 +131,7 @@ export default function LootGoblins() {
                       <>
                         <dt>
                           <Disclosure.Button className="flex w-full items-start justify-between text-left">
-                            <span className="text-lg font-semibold leading-7">
+                            <span className="text-lg text-white font-semibold leading-7">
                               Season {season.season}
                             </span>
                             <span className="ml-6 flex h-7 items-center">
