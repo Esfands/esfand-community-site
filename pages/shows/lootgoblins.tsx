@@ -88,16 +88,16 @@ export default function LootGoblins() {
       <div>
         <main className="-mt-24 pb-8">
           <div className="mx-auto">
-            <div className="bg-[#1b2126]">
+            <div className="bg-[#101316]">
               <div className="relative isolate overflow-hidden">
                 <div className="mx-auto max-w-7xl pt-10 pb-24 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:py-40 lg:px-8">
                   <div className="px-6 lg:px-0 lg:pt-4">
                     <div className="mx-auto max-w-2xl">
                       <div className="max-w-lg">
-                        <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                        <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
                           Loot Goblins
                         </h1>
-                        <p className="mt-6 text-lg leading-8 text-gray-600">
+                        <p className="mt-6 text-lg leading-8 text-gray-400">
                           Watch as our contestants take turns opening chests of
                           loot and answering twitch trivia. Guess correctly and
                           the loot is yours! Guess incorrectly and the audience
@@ -114,12 +114,20 @@ export default function LootGoblins() {
                       height="100%"
                       allowFullScreen
                       allow="autoplay"
-                      className="w-full h-96 left-0 top-0 overflow-hidden"
+                      className="w-full h-96 left-0 top-0 overflow-hidden rounded-lg"
                     ></iframe>
                   </div>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 -z-10 h-24 sm:h-32" />
               </div>
+            </div>
+          </div>
+          <div className="relative">
+            <div
+              className="absolute inset-0 flex items-center"
+              aria-hidden="true"
+            >
+              <div className="w-full border-t border-gray-500" />
             </div>
           </div>
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -134,7 +142,7 @@ export default function LootGoblins() {
                             <span className="text-lg text-white font-semibold leading-7">
                               Season {season.season}
                             </span>
-                            <span className="ml-6 flex h-7 items-center">
+                            <span className="ml-6 flex h-7 items-center text-white">
                               {open ? (
                                 <MinusSmallIcon
                                   className="h-6 w-6"
