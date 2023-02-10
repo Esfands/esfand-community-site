@@ -13,7 +13,7 @@ interface Server {
 
 const servers: Server[] = [
   {
-    name: "Minecraft Server 1 Placeholder",
+    name: "Escord MC Server",
     info: "Java Edition - Vanilla No Mods",
     status: true,
     players: "0/20",
@@ -22,9 +22,9 @@ const servers: Server[] = [
     art: "https://static-cdn.jtvnw.net/ttv-boxart/27471_IGDB-144x192.jpg",
   },
   {
-    name: "Minecraft Server 2 Placeholder",
-    info: "Java Edition - Valhesia Mod",
-    status: false,
+    name: "Escord Modded MC Server",
+    info: "Java Edition - Valhelsia 5 Modpack",
+    status: true,
     players: "0/20",
     address: "Pending",
     aaa: "",
