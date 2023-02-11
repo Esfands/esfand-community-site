@@ -26,7 +26,7 @@ const servers: Server[] = [
     info: "Java Edition - Valhelsia 5 Modpack",
     status: true,
     players: "0/20",
-    address: "Pending",
+    address: "mc.esfans.net:25567",
     aaa: "",
     art: "https://static-cdn.jtvnw.net/ttv-boxart/27471_IGDB-144x192.jpg",
   },
