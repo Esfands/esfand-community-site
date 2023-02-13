@@ -28,6 +28,7 @@ export default function DiscordUnban() {
     const jsonData = JSON.stringify(data);
     const options = {
       method: 'POST',
+      mode: 'cors' as RequestMode,
       headers: {
         'Content-Type': 'application/json',
       },
