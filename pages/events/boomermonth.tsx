@@ -168,12 +168,18 @@ export default function BoomerMonth({ playedGames, possibleGames }: BoomerMonthP
     if (isLoaded) {
         return (
             <>
-                {Head("Boomer Month")}
+                {Head("Boomer Month 2023")}
                 <main className="-mt-24">
                     <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                         <div className="px-4 py-8 sm:px-0">
                             <div className="overflow-hidden bg-[#1b2126] shadow rounded-lg pb-5">
-                                <div className="flex justify-center text-white text-2xl py-10 font-bold">
+                                <div className="flex justify-center text-white pt-4 text-2xl font-bold leading-10 tracking-tight pb-3">Boomer Month 2023</div>
+                                <div className="relative">
+                                    <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                                        <div className="w-full border-t border-gray-500" />
+                                    </div>
+                                </div>
+                                <div className="flex justify-center text-gray-200 text-xl py-10 font-bold">
                                     <h1>Games Esfand Played</h1>
                                 </div>
                                 <div>
@@ -189,7 +195,7 @@ export default function BoomerMonth({ playedGames, possibleGames }: BoomerMonthP
                                         ))}
                                     </ul>
                                 </div>
-                                <div className="flex justify-center text-white text-2xl py-2 font-bold">
+                                <div className="flex justify-center text-gray-200 text-xl py-2 font-bold">
                                     <h1>Games Esfand Might Play</h1>
                                 </div>
                                 <div>
