@@ -32,7 +32,7 @@ const games: Game[] = [
         played: true
     },
     {
-        id: 16119,
+        id: 18893,
         vods: [],
         played: false
     },
@@ -42,12 +42,12 @@ const games: Game[] = [
         played: false
     },
     {
-        id: 18893,
+        id: 16119,
         vods: [],
         played: false
     },
     {
-        id: 15866,
+        id: 22890,
         vods: [],
         played: false
     },
@@ -62,52 +62,22 @@ const games: Game[] = [
         played: false
     },
     {
-        id: 16376,
+        id: 6737,
         vods: [],
         played: false
     },
     {
-        id: 3412,
+        id: 1293419931,
         vods: [],
         played: false
     },
     {
-        id: 10322,
+        id: 2009742488,
         vods: [],
         played: false
     },
     {
-        id: 517769,
-        vods: [],
-        played: false
-    },
-    {
-        id: 4523,
-        vods: [],
-        played: false
-    },
-    {
-        id: 17464,
-        vods: [],
-        played: false
-    },
-    {
-        id: 15820,
-        vods: [],
-        played: false
-    },
-    {
-        id: 519558,
-        vods: [],
-        played: false
-    },
-    {
-        id: 19156,
-        vods: [],
-        played: false
-    },
-    {
-        id: 10033,
+        id: 417969,
         vods: [],
         played: false
     },
@@ -117,30 +87,22 @@ const games: Game[] = [
         played: false
     },
     {
-        id: 6086,
+        id: 10033,
         vods: [],
         played: false
     },
     {
-        id: 1705,
+        id: 10322,
         vods: [],
         played: false
     },
     {
-        id: 1568081763,
-        vods: [],
-        played: false
-    },
-    {
-        id: 15631,
-        vods: [],
-        played: false
-    },
-    {
-        id: 9664,
+        id: 15820,
         vods: [],
         played: false
     }
+
+
 ]
 
 
