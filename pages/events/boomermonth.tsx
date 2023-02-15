@@ -32,6 +32,16 @@ const games: Game[] = [
         played: true
     },
     {
+        id: 16119,
+        vods: [],
+        played: false
+    },
+    {
+        id: 8570120,
+        vods: [],
+        played: false
+    },
+    {
         id: 18893,
         vods: [],
         played: false
