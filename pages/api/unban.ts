@@ -1,68 +1,65 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default function Unban(req: NextApiRequest, res: NextApiResponse) {
-  
-  const apiKey = process.env.API_KEY;
+
+const verifyCaptcha = async (token) => {
   const captchaSecret = process.env.CAPTCHA_SECRET;
+  const data = {
+    secret: captchaSecret,
+    response: token,
+  }
+
+  const formBody = Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
+  const options = {
+    method: 'POST',
+    mode: 'cors' as RequestMode,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: formBody
+  }
+
+  const response = await fetch(`https://www.google.com/recaptcha/api/siteverify`, options);
+  const result = await response.json();
+
+  return result.success;
+}
+
+const submitUnbanRequest = async () => {
+  const apiKey = process.env.API_KEY;
+  const data = {
+
+  }
+
+  const options = {
+    method: 'POST',
+    mode: 'cors' as RequestMode,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'x-api-key': apiKey as string
+    },
+    body: JSON.stringify(data)
+  }
+
+  const response = await fetch(`https://mod.esfans.net/api/discord/unbans/esfandtv`, options);
+  const status = response.status;
+  
+  if (status == 200 || status == 201)
+    return true;
+  else
+    return false;
+}
+
+export default async function Unban(req: NextApiRequest, res: NextApiResponse) {
+
   const emailRegex = new RegExp('/^[^\s@]+@[^\s@]+\.[^\s@]+$/');
   const discordRegex = new RegExp('^.{3,32}#[0-9]{4}$');
 
-  const verifyCaptcha = async () => {
-
-    const data = {
-      secret: captchaSecret,
-      response: req.body.token,
-    }
-
-    const formBody = Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
-    const options = {
-      method: 'POST',
-      mode: 'cors' as RequestMode,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: formBody
-    }
-
-    const response = await fetch(`https://www.google.com/recaptcha/api/siteverify`, options);
-    const result = await response.json();
-
-    if (!result.success)
-      return false;
-
-    return true;
-  }
-
-  const submitUnbanRequest = async () => {
-    const data = {
-
-    }
-    const options = {
-      method: 'POST',
-      mode: 'cors' as RequestMode,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'x-api-key': apiKey as string
-      },
-      body: JSON.stringify(data)
-    }
-
-    const response = await fetch(`https://mod.esfans.net/api/discord/unbans/esfandtv`, options);
-    const status = response.status;
-    
-    if (status == 200 || status == 201)
-      return true;
-    else
-      return false;
-  }
-
-  let success = false;
-  verifyCaptcha().then(result => {
-    success = result;
-  });
-
-  if (!success)
+  let success = await verifyCaptcha(req.body.token);
+  if (!success) {
+    console.log('test2')
     res.status(500).json({ message: 'An error occurred when submitting the unban request. Try again later or contact a moderator.'})
+  }
+   
   
   // check for valid data
   const reqData = req.body;
