@@ -50,9 +50,8 @@ const submitUnbanRequest = async () => {
 }
 
 export default async function Unban(req: NextApiRequest, res: NextApiResponse) {
-
-  const emailRegex = new RegExp('/^\S+@\S+\.\S+$/');
-  const discordRegex = new RegExp('^.{3,32}#[0-9]{4}$');
+  const emailRegex = new RegExp(/^\S+@\S+\.\S+$/);
+  const discordRegex = new RegExp(/^.{3,32}#[0-9]{4}$/);
 
   let success = await verifyCaptcha(req.body.token);
   if (!success) {
@@ -63,6 +62,7 @@ export default async function Unban(req: NextApiRequest, res: NextApiResponse) {
   
   // check for valid data
   const reqData = req.body;
+  console.log(reqData);
   if (reqData.email == null || reqData.email == '' || reqData.email == undefined || reqData.discordTag == null || reqData.discordTag == '' || reqData.discordTag == undefined
       || reqData.banRange == null || reqData.banRange == '' || reqData.banRange == undefined || reqData.reason == null || reqData.reason == '' || reqData.reason == undefined) {
         res.status(400).json({ message: 'Missing request data'});
