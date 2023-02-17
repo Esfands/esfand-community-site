@@ -3,7 +3,6 @@ import { MinusSmallIcon, PlusSmallIcon, BellAlertIcon, CloudArrowDownIcon, CodeB
 import { useEffect } from 'react';
 import Head from "../../components/head";
 import ReactRecaptcha3 from 'react-google-recaptcha3';
-import { redirect } from 'next/dist/server/api-utils';
 
 const faqs = [
   {
@@ -46,7 +45,7 @@ export default function DiscordUnban() {
       body: jsonData,
     }
 
-    const response = await fetch(`https://www.esfans.net/api/unban/`, options);
+    const response = await fetch(`https://www.esfans.net/api/unban`, options);
     const result = await response.json();
   }
 
