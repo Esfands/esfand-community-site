@@ -6,3 +6,7 @@
   display: block;
   z-index: 9999;
 }
+
+.grecaptcha-badge {
+  display:none !important;
+}
