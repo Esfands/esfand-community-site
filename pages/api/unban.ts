@@ -56,8 +56,8 @@ export default async function Unban(req: NextApiRequest, res: NextApiResponse) {
 
   let success = await verifyCaptcha(req.body.token);
   if (!success) {
-    console.log('test2')
-    res.status(500).json({ message: 'An error occurred when submitting the unban request. Try again later or contact a moderator.'})
+    res.status(500).json({ message: 'An error occurred when submitting the unban request. Try again later or contact a moderator.'});
+    return;
   }
    
   
@@ -66,15 +66,21 @@ export default async function Unban(req: NextApiRequest, res: NextApiResponse) {
   if (reqData.email == null || reqData.email == '' || reqData.email == undefined || reqData.discordTag == null || reqData.discordTag == '' || reqData.discordTag == undefined
       || reqData.banRange == null || reqData.banRange == '' || reqData.banRange == undefined || reqData.reason == null || reqData.reason == '' || reqData.reason == undefined) {
         res.status(400).json({ message: 'Missing request data'});
+        return;
       }
 
   // regex email and username
-  if (!emailRegex.test(reqData.email))
+  if (!emailRegex.test(reqData.email)) {
     res.status(400).json({ message: 'An invalid email was entered in the request. Try another email or contact a moderator.'});
+    return;
+  }
+    
 
-  if (!discordRegex.test(reqData.discordTag))
+  if (!discordRegex.test(reqData.discordTag)) {
     res.status(400).json({ message: 'An invalid username was entered in the request. Include the 4 digit identifier or contact a moderator.'});
-  
+    return;
+  }
+    
     submitUnbanRequest().then(result => {
       success = result;
     })
