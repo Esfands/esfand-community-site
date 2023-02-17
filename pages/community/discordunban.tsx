@@ -46,7 +46,7 @@ export default function DiscordUnban() {
       body: jsonData,
     }
 
-    const response = await fetch(`https://esfans.net/api/unban/`, options);
+    const response = await fetch(`https://www.esfans.net/api/unban/`, options);
     const result = await response.json();
   }
 
