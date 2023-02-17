@@ -51,7 +51,7 @@ const submitUnbanRequest = async () => {
 
 export default async function Unban(req: NextApiRequest, res: NextApiResponse) {
 
-  const emailRegex = new RegExp('/^[^\s@]+@[^\s@]+\.[^\s@]+$/');
+  const emailRegex = new RegExp('/^\S+@\S+\.\S+$/');
   const discordRegex = new RegExp('^.{3,32}#[0-9]{4}$');
 
   let success = await verifyCaptcha(req.body.token);
