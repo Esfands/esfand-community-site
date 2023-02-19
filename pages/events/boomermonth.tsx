@@ -11,7 +11,7 @@ type GameDetail = {
 
 type Game = {
     id: number;
-    vods: number[];
+    vods: number[] | string[];
     played: boolean;
     data?: GameDetail;
 }
@@ -33,8 +33,8 @@ const games: Game[] = [
     },
     {
         id: 18893,
-        vods: [],
-        played: false
+        vods: ['1742063782?t=01h50m29s'],
+        played: true
     },
     {
         id: 8570120,
@@ -152,7 +152,7 @@ export default function BoomerMonth({ playedGames, possibleGames }: BoomerMonthP
                                     </div>
                                 </div>
                                 <div className="flex justify-center text-gray-200 text-xl py-10 font-bold">
-                                    <h1>Games Esfand Played</h1>
+                                    <h1>Games Esfand Started/Played</h1>
                                 </div>
                                 <div>
                                     <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:gap-x-3 lg:grid-cols-6 xl:gap-x-2 place-items-center">
@@ -167,7 +167,7 @@ export default function BoomerMonth({ playedGames, possibleGames }: BoomerMonthP
                                         ))}
                                     </ul>
                                 </div>
-                                <div className="flex justify-center text-gray-200 text-xl py-2 font-bold">
+                                <div className="flex justify-center text-gray-200 text-xl py-2 pt-14 font-bold">
                                     <h1>Games Esfand Might Play</h1>
                                 </div>
                                 <div>
