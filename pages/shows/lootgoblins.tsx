@@ -8,15 +8,15 @@ const seasons = [
     season: 1,
     episodes: [
       {
-        title: "S1:E1 ft. Emiru",
-        url: "https://www.youtube.com/watch?v=5wOzaSvEtVQ&list=PLUwsvlrbXgCnMN7fUSZ1hQSenZkvQ0Z6w&index=1",
+        title: "S1:E1 ft. Mizkif, Emiru, Tectone & Tipsout",
+        url: "https://www.youtube.com/watch?v=l-VPI42NC6M&list=PLUwsvlrbXgCnMN7fUSZ1hQSenZkvQ0Z6w&index=1",
       },
       {
-        title: "S1:E2 ft. Emiru",
-        url: "https://www.youtube.com/watch?v=5wOzaSvEtVQ&list=PLUwsvlrbXgCnMN7fUSZ1hQSenZkvQ0Z6w&index=1",
+        title: "S1:E2 ft. Cyr, Pokelawls, SpaceBoy & Nmplol",
+        url: "https://www.youtube.com/watch?v=ZeFHjzMvObY&list=PLUwsvlrbXgCnMN7fUSZ1hQSenZkvQ0Z6w&index=2",
       },
       {
-        title: "S1:E3 ft. Emiru",
+        title: "S1:E3 ft. Emiru, Schlatt, Maya & ConnorEatsPants",
         url: "https://www.youtube.com/watch?v=5wOzaSvEtVQ&list=PLUwsvlrbXgCnMN7fUSZ1hQSenZkvQ0Z6w&index=1",
       },
       {
