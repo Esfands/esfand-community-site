@@ -53,8 +53,8 @@ const games: Game[] = [
     },
     {
         id: 19423,
-        vods: [],
-        played: false
+        vods: ['1746053104?t=00h44m15s'],
+        played: true
     },
     {
         id: 2897,
