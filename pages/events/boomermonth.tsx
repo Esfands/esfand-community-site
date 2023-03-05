@@ -33,12 +33,24 @@ const games: Game[] = [
     },
     {
         id: 18893,
-        vods: ['1742063782?t=01h50m29s', '1743032178?t=01h30m19s', '1743983170?t=00h25m40s', '1744894986?t=03h29m21s'],
+        vods: [
+            'https://www.youtube.com/watch?v=FFvQK8NExBU',
+            'https://www.youtube.com/watch?v=p66VFvV1fjQ',
+            'https://www.youtube.com/watch?v=jxU30NtYH7o',
+            'https://www.youtube.com/watch?v=VK7Bhl2gg6o',
+            'https://www.youtube.com/watch?v=4se4D3lFdRE'
+        ],
         played: true
     },
     {
         id: 8570120,
-        vods: ['1748933705?t=02h44m43s', '1750029194?t=02h13m08s', '1750029194?t=10h27m38s', '1750850021?t=01h37m05s', '1751874919?t=00h53m50s'],
+        vods: [
+            'https://www.youtube.com/watch?v=_2OTyWcAZU4',
+            'https://www.youtube.com/watch?v=CZWnsw781YE',
+            'https://www.youtube.com/watch?v=-zhLs-c9NY0',
+            'https://www.youtube.com/watch?v=UZoRvzzqNMo',
+            'https://www.youtube.com/watch?v=nUB_Qvvw8cY'
+        ],
         played: true
     },
     {
@@ -53,7 +65,10 @@ const games: Game[] = [
     },
     {
         id: 19423,
-        vods: ['1746053104?t=00h44m15s', '1746864397?t=03h47m09s'],
+        vods: [
+            'https://www.youtube.com/watch?v=om63tPpmzvg',
+            'https://www.youtube.com/watch?v=bZLSUPbzm1A'
+        ],
         played: true
     },
     {
