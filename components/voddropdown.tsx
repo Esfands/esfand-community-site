@@ -8,6 +8,14 @@ type DropdownProps = {
 }
 
 export const VodDropdown = ({ buttonText, vods }: DropdownProps) => {
+
+    function getPartUrl(url: string) {
+        if (url.includes('https'))
+            return url;
+        else
+            return `https://www.twitch.tv/videos/${url}`
+    }
+
     return (
         <Menu as="div" className="relative text-left">
             <div>
@@ -30,7 +38,7 @@ export const VodDropdown = ({ buttonText, vods }: DropdownProps) => {
                     <div className="py-1">
                         {vods.map((vod, i) => (
                             <Menu.Item key={vod}>
-                                <a href={`https://www.twitch.tv/videos/${vod}`} target="_blank" rel="noreferrer" className='text-gray-700 block px-4 py-2 text-sm hover:bg-slate-50'>
+                                <a href={getPartUrl(vod)} target="_blank" rel="noreferrer" className='text-gray-700 block px-4 py-2 text-sm hover:bg-slate-50'>
                                     Part #{i+1}
                                 </a>
                             </Menu.Item>
