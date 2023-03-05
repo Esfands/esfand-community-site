@@ -11,7 +11,7 @@ type GameDetail = {
 
 type Game = {
     id: number;
-    vods: number[] | string[];
+    vods: string[];
     played: boolean;
     data?: GameDetail;
 }
@@ -28,7 +28,7 @@ type BoomerMonthProps = {
 const games: Game[] = [
     {
         id: 980679052,
-        vods: [1719978446, 1721257663],
+        vods: ['1719978446', '1721257663'],
         played: true
     },
     {
