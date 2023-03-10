@@ -73,7 +73,10 @@ const games: Game[] = [
     },
     {
         id: 2897,
-        vods: ['1753654055?t=01h55m38s'],
+        vods: [
+            'https://www.youtube.com/watch?v=X9T9lvH7pNc',
+            'https://www.youtube.com/watch?v=rnsZF_9S8wg'
+        ],
         played: true
     },
     {
@@ -88,8 +91,11 @@ const games: Game[] = [
     },
     {
         id: 2009742488,
-        vods: [],
-        played: false
+        vods: [
+            'https://www.youtube.com/watch?v=C2looIbz5pk',
+            'https://www.youtube.com/watch?v=5MzyCnZOIdA'
+        ],
+        played: true
     },
     {
         id: 417969,
