@@ -100,14 +100,7 @@ export default function TailgateTours() {
                     </div>
                   </div>
                   <div className="sm:mt-10 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen">
-                    <iframe
-                      src="https://img.otkdata.com/esfandtv/esfans/Tailgate_Tour_Intro.mp4?controls=false"
-                      frameBorder="0"
-                      width="100%"
-                      height="100%"
-                      allow="autoplay"
-                      className="w-full h-96 left-0 top-0 overflow-hidden rounded-lg"
-                    ></iframe>
+                    <video src="https://img.otkdata.com/esfandtv/esfans/Tailgate_Tour_Intro.mp4" typeof="video/mp4" muted autoPlay className="w-full h-96 left-0 top-0 overflow-hidden rounded-lg" />
                   </div>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 -z-10 h-24 sm:h-32" />
