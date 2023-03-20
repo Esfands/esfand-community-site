@@ -6,7 +6,6 @@ export const Layout = ({ children }) => {
   return (
     <>
       <div className="h-screen">
-        <InfoBanner />
         <Navbar />
         <main className="min-h-full">{children}</main>
         <Footer />
